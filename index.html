@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Filiamo</title>
+  <style>
+    body  {
+      background-color: #f4c2c2;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;    
+    }
+
+    img.logo  {
+      display: block;
+      width: 400px; 
+      height: auto;
+      margin: 0 auto;
+      Border-radius: 50%;
+      Object-fit: cover;
+    }
+
+    p {
+      color: #800020;
+      font-size: 20px;
+      margin: 10px 0 20px 0;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    h1 {
+      color: #800020;
+      margin-bottom: 30px;
+    }
+    
+    .catalogo-conteiner  {
+        Display: flex;
+        Align-items: center;
+        Position: relative;
+        Max-width: 900px;
+    }
+
+    .catalogo  {
+        display: flex;
+        Overflow-x: auto;
+        Scroll-behavior: smooth;
+        gap: 20px;
+        Padding: 0 40px;
+    }
+
+    .catalogo: :-webkit-scrollbar  {
+      Display: none;
+    }  
+
+    button.prev, button.next  {
+        position: absolute;
+        Top: 90%;
+	transfer: translateY(-50%);
+	margin: auto 0;
+        background-color: pink;
+        Color: white;
+        Border: none;
+        Padding: 10px 15px;
+        Font-size: 24px;
+        Cursor: pointer;
+        Border-radius: 50%;
+        Height: 40px;
+	width: 40px;
+    }
+
+    button.prev  {
+      Left: -5px;     
+    }
+
+    button.next  {
+      right: -5px;
+    }
+
+    .borsa {
+        Min-width: 130px;
+        Height: auto;
+        background-color: #fff;
+        border: 2px solid #800020;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .borsa img {
+        width: 100%;
+        height: 300px; 
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .borsa h2 {
+        color: #800020;
+        font-size: 20px;
+        margin: 10px 0 5px;
+    }
+
+    .borsa p {
+        font-size: 16px;
+        color: #333;
+        margin: 0;
+    }  
+  </style>
+  </head>
+  <body>
+
+    <img src="logo.png" alt="logo uncinetto" class="logo">
+    <p>Benvenuta nella mia pagina di uncinetto &#x1F9F6</p>
+
+
+    <h1>Storico delle mie borse 👜</h1>
+
+    <div class="catalogo-container">
+      <button class="prev">&#10094;</button>
+      <div class="catalogo">
+        <div class="borsa">
+          <img src="borsa1.png" alt="Borsa uncinetto 1">
+          <h2>Borsa Nodo Giapponese</h2>
+          <p>Colore: Warm Desert</p>
+        </div>
+        <div class="borsa">
+          <img src="borsa2.png" alt="Borsa uncinetto 2">
+          <h2>Borsa Ginny</h2>
+          <p>Colore: Deep Teal</p>
+        </div>
+        <div class="borsa">
+          <img src="borsa3.png" alt="Borsa uncinetto 3">
+          <h2>Borsa Halo Bamboo</h2>
+          <p>Colore: Warm Desert</p>
+        </div> 
+        <button class="next">&#10095;</button>
+      </div>
+
+
+      <script>
+        const catalogo = document.querySelector('.catalogo');
+	const prev = document.querySelector('.prev');
+	const next = document.querySelector('.next');
+
+	prev.addEventListener('click', () => {
+  	  catalogo.scrollBy({ left: -220, behavior: 'smooth' });
+	});
+
+	next.addEventListener('click', () => {
+	  catalogo.scrollBy({ left: 220, behavior: 'smooth' });
+	});
+      </script>
+  </body>
+</html> 
